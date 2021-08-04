@@ -17,15 +17,20 @@ public class IncreasingSubsequence {
 
         //Iterate through the ArrayList
         while (start < myList.size() - 2) {
-            List<Integer> sublist = myList.subList(start, end + 1);
 
-            System.out.println("gg no re");
+            System.out.println("*****");
+
             while (pointer2 < myList.size()) {
 
                 //if the last two elements are increasing
                 if (myList.get(pointer1) < myList.get(pointer2)) {
+
                     System.out.println(myList.get(pointer1));
                     System.out.println(myList.get(pointer2));
+                    System.out.println("/////////");
+                    System.out.println("Count = " + subcount);
+                    System.out.println("/////////");
+
                     pointer1 = pointer2;
                     pointer2 += 1;
                     subcount += 1;
@@ -35,10 +40,10 @@ public class IncreasingSubsequence {
                     pointer2 += 1;
                 }
             }
-            if (end < myList.size() - 1) {
-                end += 1;
+            if (end < myList.size()-1) {
                 pointer1 = start;
-                pointer2 = sublist.size() - 1;
+                pointer2 = end;
+                end += 1;
 
             } else {
                 start += 1;
