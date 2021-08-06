@@ -6,12 +6,12 @@ public class IncreasingSubsequence {
 
     public static void main(String[] args) {
         //instance variables
-        List<Integer> myList = new ArrayList<>(Arrays.asList(1, 7, 3, 5, 2, 8, 10, 24, -1, -5, 4));
+        //List<Integer> myList = new ArrayList<>(Arrays.asList(1, 7, 3, 5, 2, 8, 10, 24, -1, -5, 4));
+        List<Integer> myList = new ArrayList<>(Arrays.asList(1, 2, 3));
 
         int subcount = myList.size();
         int start = 0;
         int end = 1;
-
         int pointer1 = start;
         int pointer2 = end;
 
@@ -34,6 +34,7 @@ public class IncreasingSubsequence {
                     System.out.println("pointer 2 = " + pointer2);
                     System.out.println("end = " + end);
                     System.out.println("/////////");
+
                     //if the last two elements are decreasing
                 } else {
                     pointer2 += 1;
