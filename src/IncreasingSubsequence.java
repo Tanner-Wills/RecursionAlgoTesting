@@ -16,8 +16,8 @@ public class IncreasingSubsequence {
 
         //int[] myList = {1, 7, 3, 5, 2, 8, 10, 24, -1, -5, 4};
         //List<Integer> myList = new ArrayList<>(Arrays.asList(3,2,4,5,4));
-        //int[] myList = {3, 2, 4, 5, 4};
-        int[] myList = {1,2,3};
+        int[] myList = {3, 2, 4, 5, 4};
+        //int[] myList = {1,2,3};
         System.out.println("Total = " + addSubsequence(myList));
     }
 
@@ -39,6 +39,7 @@ public class IncreasingSubsequence {
             index += 1;
         }
 
+        //subArray.forEach(System.out::println);
         for (int item : subArray) {
             System.out.println(item);
         }
