@@ -15,27 +15,35 @@ public class TowerOfHanoi {
      */
 
     public static void main(String[] args) {
-
+        // Define number of discs
         int discs = 4;
 
+        // The 3 towers represented as ArrayLists
+        ArrayList<Integer> towerA = new ArrayList<Integer>();
+        ArrayList<Integer> towerB = new ArrayList<Integer>();
+        ArrayList<Integer> towerC = new ArrayList<Integer>();
+
+        // Adding the number of discs to Tower_A
+        for (int i = 1; i <= discs; i++) {
+            towerA.add(i);
+        }
+
+        towerOfHanoi(towerA,towerB,towerC);
 
     }
 
-    public static int towerMoves(int discs) {
+    public static int towerOfHanoi(ArrayList<Integer> a, ArrayList<Integer> b, ArrayList<Integer> c) {
+        towerPrint(a, b, c);
+
+        b.add(1);
+        a.remove(0);
+
+        towerPrint(a, b, c);
         // ArrayList for recording the current move stack && the previous move stack
         // Moves will start by adding to the stack, then popping them off in the next iteration.
         ArrayList<Integer> moveStack = new ArrayList<Integer>();
         ArrayList<Integer> movePrev = new ArrayList<Integer>();
-
-        // The 3 towers represented as ArrayLists
-        ArrayList<Integer> Tower_A = new ArrayList<Integer>();
-        ArrayList<Integer> Tower_B = new ArrayList<Integer>();
-        ArrayList<Integer> Tower_C = new ArrayList<Integer>();
-
-        // Adding the number of discs to Tower_A
-        for (int i = 1; i >= discs; i++) {
-            Tower_A.add(i);
-        }
+        int moves = 0;
 
         //Sequence for moving a stack of 1
         //if the move count == half of [2^(n) -2], pop the moves off the stack. (moves must be mirrored)
@@ -43,14 +51,23 @@ public class TowerOfHanoi {
         //if an array is empty, move the largest available disc to the empty array.
         //if all arrays are full move the smallest disc to the
 
-        int moves = 0;
 
-        if(moves > Math.pow(2,discs)-1){
-            int moveSet = moveStack.get(moveStack.size()-(moves - moveStack.size()));
-            moveStack.
-        }
 
         return 1;
+    }
+
+    public static void towerPrint(ArrayList<Integer> a, ArrayList<Integer> b, ArrayList<Integer> c) {
+        int maxim = a.size() + b.size() + c.size();
+
+        System.out.println("---  ---  ---");
+
+        a.forEach(System.out::print);
+        System.out.println("");
+        b.forEach(System.out::print);
+        System.out.println("");
+        c.forEach(System.out::print);
+
+        System.out.println("---  ---  ---");
     }
 }
 
