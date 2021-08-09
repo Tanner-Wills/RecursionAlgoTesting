@@ -23,7 +23,8 @@ public class TowerOfHanoi {
             Tower_1.add(i);
         }
 
-        /* Find a pattern that can be repeated (4 Rings, 3 columns)
+        /*
+            Find a pattern that can be repeated (4 Rings, 3 columns)
             Start: [1,2,3,4] [0] [0]
             1. Place ring 1 in column 2. [2,3,4] [1] [0]
             2. Place ring 2 in column 3. [3,4] [1] [2]
@@ -41,7 +42,35 @@ public class TowerOfHanoi {
             14. Place ring 2 on column 3. [0] [1] [2,3,4]
             15. Place ring 1 on column 3. [0] [0] [1,2,3,4]
             Complete!
+
+            Start: [1,2,3,4] [0] [0]
+            1. [2,3,4] [1] [0]
+            2. [3,4] [1] [2]
+            3. [3,4] [0] [1,2]
+            4. [4] [3] [1,2]
+            5. [1,4] [3] [2]
+            6. [1,4] [2,3] [0]
+            7. [4] [1,2,3] [0]
+            8. [0] [1,2,3] [4]
+            9. [0] [2,3] [1,4]
+            10.[2] [3] [1,4]
+            11.[1,2] [3] [4]
+            12.[1,2] [0] [3,4]
+            13.[2] [1] [3,4]
+            14.[0] [1] [2,3,4]
+            15.[0] [0] [1,2,3,4]
+
+            Start: [1,2,3] [0] [0]
+            1. [2,3] [0] [1]
+            2. [3] [2] [1]
+            3. [3] [1,2] [0]
+            4. [0] [1,2] [3]
+            5. [1] [2] [3]
+            6. [1] [0] [2,3]
+            7. [0] [0] [1,2,3]
+
         */
+
 
 
 

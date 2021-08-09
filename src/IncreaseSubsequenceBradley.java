@@ -1,23 +1,24 @@
 public class IncreaseSubsequenceBradley {
+
     public static void main(String[] args) {
-        //int[] myArr = {1,3,-1,2,5};
-        int[] myArr = {1, 7, 3, 5, 2, 8, 10, 24, -1, -5, 4};
+        int[] myArr = {3,2,4,-5,4};
+        //int[] myArr = {1, 7, 3, 5, 2, 8, 10, 24, -1, -5, 4};
         System.out.println("Num Subarrays = " + subArrays(myArr));
     }
+
     public static int subArrays(int[] myArr){
         if (myArr.length == 1){
             return 1;
         }
-
         // Print subarrays
         int sumCount = 1;
-        for (int i=1;i < myArr.length;i++){
+        for (int i=1; i < myArr.length; i++){
             if (myArr[i] < myArr[0]){
                 continue;
             }
             int count = 0;
             int previous = myArr[0];
-            for (int y=i;y < myArr.length;y++){
+            for (int y=i; y < myArr.length; y++){
                 if (y == i){
                     System.out.print(previous);
                     System.out.print(" ");
@@ -35,7 +36,7 @@ public class IncreaseSubsequenceBradley {
         }
         // Get next sub-array to send recursively
         int[] nextArr = new int[myArr.length-1];
-        for (int i = 1;i < myArr.length;i++){
+        for (int i = 1; i < myArr.length; i++){
             nextArr[i-1] = myArr[i];
         }
         return sumCount + subArrays(nextArr);
