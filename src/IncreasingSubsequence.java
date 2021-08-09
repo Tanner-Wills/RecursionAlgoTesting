@@ -5,60 +5,39 @@ import java.util.List;
 public class IncreasingSubsequence {
 
     public static void main(String[] args) {
-        //instance variables
-        //List<Integer> myList = new ArrayList<>(Arrays.asList(1, 7, 3, 5, 2, 8, 10, 24, -1, -5, 4));
-        List<Integer> myList = new ArrayList<>(Arrays.asList(1, 2, 3));
+        /*
+        Strategy:
+          Index through the list
+          At each index, count the number of ints that are of lesser index and lesser value. *subCount*
+          Then subCount(i) += subCount at each index of lesser index and value
+          Add this count to the ArrayList
 
-        int subcount = myList.size();
-        int start = 0;
-        int end = 1;
-        int pointer1 = start;
-        int pointer2 = end;
+        */
 
-        //Iterate through the ArrayList
-        while (start < myList.size() - 1) {
-            System.out.println("*****");
-            while (pointer2 < myList.size()) {
-                //if the last two elements are increasing
-                if (myList.get(pointer1) < myList.get(pointer2)) {
+        int[] myList = {1, 7, 3, 5, 2, 8, 10, 24, -1, -5, 4};
+        //List<Integer> myList = new ArrayList<>(Arrays.asList(3,2,4,5,4));
+        //int[] myList = {3,2,4,5,4};
 
-                    System.out.println(myList.get(pointer1));
-                    System.out.println(myList.get(pointer2));
+        ArrayList<Integer> subArray = new ArrayList<Integer>();
+        int result = 1;
+        int index = 1;
+        subArray.add(1);
 
-                    pointer1 = pointer2;
-                    pointer2 += 1;
-                    subcount += 1;
-
-                    System.out.println("/////////");
-                    System.out.println("Count = " + subcount);
-                    System.out.println("pointer 2 = " + pointer2);
-                    System.out.println("end = " + end);
-                    System.out.println("/////////");
-
-                    //if the last two elements are decreasing
-                } else {
-                    pointer2 += 1;
+        while(index < myList.length) {
+            int subCount = 1;
+            for (int i = index-1; i >= 0; i--) {
+                if (myList[i] < myList[index]) {
+                    subCount += subArray.get(i);
                 }
             }
-            // increment "end" position and set pointer 2 equal to it
-            // this will increment the pointer 1 and 2 start position to identify all possible subarrays from the start position
-            if (end < myList.size()-1) {
-                end += 1;
-                pointer1 = start;
-                pointer2 = end;
-            // If all possible subarrays have been examined from the current start position, increment start position +1
-            } else {
-                start += 1;
-                end = start + 1;
-                pointer1 = start;
-                pointer2 = start + 1;
-            }
-            //while loop to prevent duplicate increasing subarrays
-            while(pointer2 < myList.size()-1 && myList.get(pointer1) > myList.get(pointer2)){
-                end += 1;
-                pointer2 = end;
-            }
+            subArray.add(subCount);
+            result += subCount;
+            index += 1;
         }
-        System.out.println(subcount);
+        for(int item:subArray){
+            System.out.println(item);
+        }
+        System.out.println("Total = " + result);
     }
 }
+
