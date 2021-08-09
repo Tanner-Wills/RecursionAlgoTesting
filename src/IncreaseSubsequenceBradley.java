@@ -12,6 +12,7 @@ public class IncreaseSubsequenceBradley {
         }
         // Print subarrays
         int sumCount = 1;
+
         for (int i=1; i < myArr.length; i++){
             if (myArr[i] < myArr[0]){
                 continue;
@@ -34,6 +35,7 @@ public class IncreaseSubsequenceBradley {
             sumCount+= Math.pow(2,count-1);
             System.out.println("Sumcount=" + sumCount + ", Count=" + count);
         }
+
         // Get next sub-array to send recursively
         int[] nextArr = new int[myArr.length-1];
         for (int i = 1; i < myArr.length; i++){
