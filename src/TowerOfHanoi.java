@@ -19,9 +19,30 @@ public class TowerOfHanoi {
 
         int discs = 4;
 
-        for (int i = 1; i <= discs; i++) {
+        for (int i = discs; i > 0; i--) {
             Tower_1.add(i);
         }
+
+        /* Find a pattern that can be repeated (4 Rings, 3 columns)
+            Start: [1,2,3,4] [0] [0]
+            1. Place ring 1 in column 2. [2,3,4] [1] [0]
+            2. Place ring 2 in column 3. [3,4] [1] [2]
+            3. All columns occupied, so place ring 1 on top of ring 2 (column 3). [3,4] [0] [1,2]
+            4. Now a space is opened, so ring 3 in column 2. [4] [3] [1,2]
+            5. Need to shift rings, so place ring 1 in column 1 (on top of largest ring). [1,4] [3] [2]
+            6. Place ring 2 on ring 3 (column 2). [1,4] [2,3] [0]
+            7. Place ring 1 on ring 2 (column 2). [4] [1,2,3] [0]
+            8. Place ring 4 in column 3. [0] [1,2,3] [4]
+            9. Place ring 1 on column 3. [0] [2,3] [1,4]
+            10. Place ring 2 on column 1. [2] [3] [1,4]
+            11. Place ring 1 on column 1. [1,2] [3] [4]
+            12. Place ring 3 on column 3. [1,2] [0] [3,4]
+            13. Place ring 1 in column 2. [2] [1] [3,4]
+            14. Place ring 2 on column 3. [0] [1] [2,3,4]
+            15. Place ring 1 on column 3. [0] [0] [1,2,3,4]
+            Complete!
+        */
+
 
 
 
