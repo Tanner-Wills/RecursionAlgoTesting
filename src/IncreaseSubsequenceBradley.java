@@ -1,7 +1,7 @@
 public class IncreaseSubsequenceBradley {
 
     public static void main(String[] args) {
-        int[] myArr = {3,2,4,-5,4};
+        int[] myArr = {3,2,4,5,4};
         //int[] myArr = {1, 7, 3, 5, 2, 8, 10, 24, -1, -5, 4};
         System.out.println("Num Subarrays = " + subArrays(myArr));
     }
