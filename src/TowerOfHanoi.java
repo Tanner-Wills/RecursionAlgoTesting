@@ -56,13 +56,14 @@ public class TowerOfHanoi {
     public static void towerPrint(ArrayList<Integer> a, ArrayList<Integer> b, ArrayList<Integer> c) {
         int maxim = a.size() + b.size() + c.size();
 
-        a.forEach(System.out::print);
+        a.forEach(System.out::println);
         System.out.println("");
         b.forEach(System.out::print);
         System.out.println("");
         c.forEach(System.out::print);
         System.out.println("");
         System.out.println("---  ---  ---");
+
     }
 }
 
@@ -71,36 +72,36 @@ public class TowerOfHanoi {
 
                 (3 Rings)
         Start: [1,2,3] [0] [0]
-            1. [2,3] [0] [1]    1 to C
-            2. [3] [2] [1]      2 to B
-            3. [3] [1,2] [0]    1 to B
+            1. [2,3] [0] [1]    1 A to C
+            2. [3] [2] [1]      2 A to B
+            3. [3] [1,2] [0]    1 C to B
 
-            4. [0] [1,2] [3]    3 to C
-            5. [1] [2] [3]      1 to A
-            6. [1] [0] [2,3]    2 to C
-            7. [0] [0] [1,2,3]  1 to C
+            4. [0] [1,2] [3]    3 A to C
+            5. [1] [2] [3]      1 B to A
+            6. [1] [0] [2,3]    2 B to C
+            7. [0] [0] [1,2,3]  1 A to C
 
                     ***
 
                 (4 Rings)
         Start: [1,2,3,4] [0] [0]
-            1. [2,3,4] [1] [0]  1 to B
-            2. [3,4] [1] [2]    2 to C
-            3. [3,4] [0] [1,2]  1 to C
+            1. [2,3,4] [1] [0]  1 A to B
+            2. [3,4] [1] [2]    2 A to C
+            3. [3,4] [0] [1,2]  1 B to C
 
-            4. [4] [3] [1,2]    3 to B
-            5. [1,4] [3] [2]    1 to A
-            6. [1,4] [2,3] [0]  2 to B
-            7. [4] [1,2,3] [0]  1 to B
+            4. [4] [3] [1,2]    3 A to B
+            5. [1,4] [3] [2]    1 C to A
+            6. [1,4] [2,3] [0]  2 C to B
+            7. [4] [1,2,3] [0]  1 A to B
 
-            8. [0] [1,2,3] [4]  4 to C
-            9. [0] [2,3] [1,4]  1 to C
-            10.[2] [3] [1,4]    2 to A
-            11.[1,2] [3] [4]    1 to A
-            12.[1,2] [0] [3,4]  3 to C
-            13.[2] [1] [3,4]    1 to B
-            14.[0] [1] [2,3,4]  2 to C
-            15.[0] [0] [1,2,3,4]1 to C
+            8. [0] [1,2,3] [4]  4 A to C
+            9. [0] [2,3] [1,4]  1 B to C
+            10.[2] [3] [1,4]    2 B to A
+            11.[1,2] [3] [4]    1 C to A
+            12.[1,2] [0] [3,4]  3 B to C
+            13.[2] [1] [3,4]    1 A to B
+            14.[0] [1] [2,3,4]  2 A to C
+            15.[0] [0] [1,2,3,4]1 B to C
 
                     ***
 
