@@ -35,17 +35,19 @@ public class TowerOfHanoi {
     public static int towerOfHanoi(ArrayList<Integer> a, ArrayList<Integer> b, ArrayList<Integer> c) {
         towerPrint(a, b, c);
 
-
         ArrayList<Integer> moveStack = new ArrayList<Integer>();
         ArrayList<Integer> movePrev = new ArrayList<Integer>();
+        int[] towerSequence = {1, 2, 3}; // 1 = a, 2 = b, 3 = c
+        int moves = 0;
 
-        // Odd number of discs
-        // odd numbers move to the left A -> C -> B -> A
-        // even numbers move to the right A -> B -> C
+        //Odd number of discs
+            // odd numbers move to the left A -> C -> B -> A
+            // even numbers move to the right A -> B -> C
 
         //Even number fo discs
-        // odd numbers move to the right A -> B -> C
-        // even numbers move to the left A -> C -> B -> A
+            // odd numbers move to the right A -> B -> C
+            // even numbers move to the left A -> C -> B -> A
+
 
         //Sequence:
         // 1, 2, 1, 3
@@ -56,7 +58,20 @@ public class TowerOfHanoi {
         // 1, 2, 1, 4
         // 1, 2, 1, 3
 
-        int moves = 0;
+        //Check for game victory
+
+        if(c.size() == (a.size() + b.size() + c.size())){
+            System.out.println("Hanoi completed in " + moves + " moves");
+            return moves;
+        } else {
+
+
+
+
+
+
+
+        }
 
 
 
@@ -68,7 +83,7 @@ public class TowerOfHanoi {
     public static void towerPrint(ArrayList<Integer> a, ArrayList<Integer> b, ArrayList<Integer> c) {
         int maxim = a.size() + b.size() + c.size();
 
-        a.forEach(System.out::println);
+        a.forEach(System.out::print);
         System.out.println("");
         b.forEach(System.out::print);
         System.out.println("");
@@ -119,40 +134,40 @@ public class TowerOfHanoi {
 
                 (5 Rings)
         Start: [1,2,3,4,5] [0] [0]
-            1. [2,3,4,5] [0] [1]    1 to C
-            2. [3,4,5] [2] [1]      2 to B
-            3. [3,4,5] [1,2] [0]    1 to B
+            1. [2,3,4,5] [0] [1]    1 A to C
+            2. [3,4,5] [2] [1]      2 A to B
+            3. [3,4,5] [1,2] [0]    1 C to B
 
-            4. [4,5] [1,2] [3]      3 to C
-            5. [1,4,5] [2] [3]      1 to A
-            6. [1,4,5] [0] [2,3]    2 to C
-            7. [4,5] [0] [1,2,3]    1 to C
+            4. [4,5] [1,2] [3]      3 A to C
+            5. [1,4,5] [2] [3]      1 C to A
+            6. [1,4,5] [0] [2,3]    2 B to C
+            7. [4,5] [0] [1,2,3]    1 A to C
 
-            8. [5] [4] [1,2,3]      4 to B
-            9. [5] [1,4] [2,3]      1 to B
-            10.[2,5] [1,4] [3]      2 to A
-            11.[1,2,5] [4] [3]      1 to A
-            12.[1,2,5] [3,4] [0]    3 to B
-            13.[2,5] [3,4] [1]      1 to C
-            14.[5] [2,3,4] [1]      2 to B
-            15.[5] [1,2,3,4] [0]    1 to B
+            8. [5] [4] [1,2,3]      4 A to B
+            9. [5] [1,4] [2,3]      1 C to B
+            10.[2,5] [1,4] [3]      2 C to A
+            11.[1,2,5] [4] [3]      1 B to A
+            12.[1,2,5] [3,4] [0]    3 C to B
+            13.[2,5] [3,4] [1]      1 A to C
+            14.[5] [2,3,4] [1]      2 A to B
+            15.[5] [1,2,3,4] [0]    1 C to B
 
-            16.[0] [1,2,3,4] [5]    5 to C
-            17.[1] [2,3,4] [5]      1 to A
-            18.[1] [3,4] [2,5]      2 to C
-            19.[0] [3,4] [1,2,5]    1 to C
-            20.[3] [4] [1,2,5]      3 to A
-            21.[3] [1,4] [2,5]      1 to B
-            22.[2,3] [1,4] [5]      2 to A
-            23.[1,2,3] [4] [5]      1 to A
-            24.[1,2,3] [0] [4,5]    4 to C
-            25.[2,3] [0] [1,4,5]    1 to C
-            26.[3] [2] [1,4,5]      2 to B
-            27.[3] [1,2] [4,5]      1 to B
-            28.[0] [1,2] [3,4,5]    3 to C
-            29.[1] [2] [3,4,5]      1 to A
-            30.[1] [0] [2,3,4,5]    2 to C
-            31.[0] [0] [1,2,3,4,5]  1 to C
+            16.[0] [1,2,3,4] [5]    5 A to C
+            17.[1] [2,3,4] [5]      1 B to A
+            18.[1] [3,4] [2,5]      2 B to C
+            19.[0] [3,4] [1,2,5]    1 A to C
+            20.[3] [4] [1,2,5]      3 B to A
+            21.[3] [1,4] [2,5]      1 C to B
+            22.[2,3] [1,4] [5]      2 C to A
+            23.[1,2,3] [4] [5]      1 B to A
+            24.[1,2,3] [0] [4,5]    4 B to C
+            25.[2,3] [0] [1,4,5]    1 A to C
+            26.[3] [2] [1,4,5]      2 A to B
+            27.[3] [1,2] [4,5]      1 C to B
+            28.[0] [1,2] [3,4,5]    3 A to C
+            29.[1] [2] [3,4,5]      1 B to A
+            30.[1] [0] [2,3,4,5]    2 B to C
+            31.[0] [0] [1,2,3,4,5]  1 A to C
 
 
 
