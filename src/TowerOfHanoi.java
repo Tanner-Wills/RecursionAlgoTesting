@@ -8,10 +8,6 @@ public class TowerOfHanoi {
     3. When you move a ring, you can only move the ring on top of the stack
 
     minimum number of moves is = (2^n) - 1
-    each sequence is mirrored at the halfway point
-    so if n=4, the stack will build to 7, then pop off a mirrored move to 0. (15 total moves)
-
-            *****
      */
 
     public static void main(String[] args) {
@@ -35,19 +31,15 @@ public class TowerOfHanoi {
     public static int towerOfHanoi(ArrayList<Integer> a, ArrayList<Integer> b, ArrayList<Integer> c) {
         towerPrint(a, b, c);
 
-        ArrayList<Integer> moveStack = new ArrayList<Integer>();
-        ArrayList<Integer> movePrev = new ArrayList<Integer>();
-        int[] towerSequence = {1, 2, 3}; // 1 = a, 2 = b, 3 = c
         int moves = 0;
-
+        int discCount = a.size() + b.size() + c.size();
         //Odd number of discs
             // odd numbers move to the left A -> C -> B -> A
             // even numbers move to the right A -> B -> C
 
-        //Even number fo discs
+        //Even number of discs
             // odd numbers move to the right A -> B -> C
             // even numbers move to the left A -> C -> B -> A
-
 
         //Sequence:
         // 1, 2, 1, 3
@@ -58,42 +50,36 @@ public class TowerOfHanoi {
         // 1, 2, 1, 4
         // 1, 2, 1, 3
 
-        //Check for game victory
 
-        if(c.size() == (a.size() + b.size() + c.size())){
+        //Check for game victory
+        if(c.size() == discCount){
             System.out.println("Hanoi completed in " + moves + " moves");
             return moves;
         } else {
+            if(discCount % 2 == 0){
+                //even number of discs
+
+
+                if(moves % 2 == 1){
 
 
 
+                }
 
 
-
+            }else{
+                //odd number of discs
+            }
 
         }
-
-
-
-
-
         return 1;
     }
 
     public static void towerPrint(ArrayList<Integer> a, ArrayList<Integer> b, ArrayList<Integer> c) {
-        int maxim = a.size() + b.size() + c.size();
 
-        a.forEach(System.out::print);
-        System.out.println("");
-        b.forEach(System.out::print);
-        System.out.println("");
-        c.forEach(System.out::print);
-        System.out.println("");
-        System.out.println("---  ---  ---");
 
     }
 }
-
         /*
         Find a pattern that can be repeated (Smaller sub-problems)
 
