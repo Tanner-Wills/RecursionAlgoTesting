@@ -36,17 +36,29 @@ public class TowerOfHanoi {
         towerPrint(a, b, c);
 
 
-        // ArrayList for recording the current move stack && the previous move stack
-        // Moves will start by adding to the stack, then popping them off in the next iteration.
         ArrayList<Integer> moveStack = new ArrayList<Integer>();
         ArrayList<Integer> movePrev = new ArrayList<Integer>();
+
+        // Odd number of discs
+        // odd numbers move to the left A -> C -> B -> A
+        // even numbers move to the right A -> B -> C
+
+        //Even number fo discs
+        // odd numbers move to the right A -> B -> C
+        // even numbers move to the left A -> C -> B -> A
+
+        //Sequence:
+        // 1, 2, 1, 3
+        // 1, 2, 1, 4
+        // 1, 2, 1, 3
+        // 1, 2, 1, 5
+        // 1, 2, 1, 3
+        // 1, 2, 1, 4
+        // 1, 2, 1, 3
+
         int moves = 0;
 
-        //Sequence for moving a stack of 1
-        //if the move count == half of [2^(n) -2], pop the moves off the stack. (moves must be mirrored)
-        //Always operate from index 0 because you can only remove the top disc
-        //if an array is empty, move the largest available disc to the empty array.
-        //if all arrays are full move the smallest disc to the
+
 
 
 
