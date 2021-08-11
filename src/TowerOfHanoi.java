@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class TowerOfHanoi {
     /*
@@ -8,6 +9,23 @@ public class TowerOfHanoi {
     3. When you move a ring, you can only move the ring on top of the stack
 
     minimum number of moves is = (2^n) - 1
+
+    //Odd number of discs
+            // odd numbers move to the left A -> C -> B -> A
+            // even numbers move to the right A -> B -> C
+
+        //Even number of discs
+            // odd numbers move to the right A -> B -> C
+            // even numbers move to the left A -> C -> B -> A
+
+        //Sequence:
+        // 1, 2, 1, 3
+        // 1, 2, 1, 4
+        // 1, 2, 1, 3
+        // 1, 2, 1, 5
+        // 1, 2, 1, 3
+        // 1, 2, 1, 4
+        // 1, 2, 1, 3
      */
 
     public static void main(String[] args) {
@@ -24,62 +42,34 @@ public class TowerOfHanoi {
             towerA.add(i);
         }
 
-        towerOfHanoi(towerA,towerB,towerC);
-
-    }
-
-    public static int towerOfHanoi(ArrayList<Integer> a, ArrayList<Integer> b, ArrayList<Integer> c) {
-        towerPrint(a, b, c);
-
+        char from = 'A';
+        char aux = 'B';
+        char to = 'C';
         int moves = 0;
-        int discCount = a.size() + b.size() + c.size();
-        //Odd number of discs
-            // odd numbers move to the left A -> C -> B -> A
-            // even numbers move to the right A -> B -> C
+        towerOfHanoi(discs, from, aux, to);
 
-        //Even number of discs
-            // odd numbers move to the right A -> B -> C
-            // even numbers move to the left A -> C -> B -> A
+    }
 
-        //Sequence:
-        // 1, 2, 1, 3
-        // 1, 2, 1, 4
-        // 1, 2, 1, 3
-        // 1, 2, 1, 5
-        // 1, 2, 1, 3
-        // 1, 2, 1, 4
-        // 1, 2, 1, 3
+    public static void towerOfHanoi(int discs,char from,char aux,char to) {
 
+            //towerPrint(a, b, c);
 
-        //Check for game victory
-        if(c.size() == discCount){
-            System.out.println("Hanoi completed in " + moves + " moves");
-            return moves;
-        } else {
-            if(discCount % 2 == 0){
-                //even number of discs
+            //Check for game victory
 
-
-                if(moves % 2 == 1){
-
-
-
-                }
-
-
-            }else{
-                //odd number of discs
+            if (discs == 1) {
+                //moves += 1;
+                System.out.println("Move disc 1 from " + from + " to " + to + ".\n");
+                //System.out.println("Hanoi Complete in " + moves + " moves!");
+            } else {
+                //moves += 1;
+                towerOfHanoi(discs - 1, from, to, aux);
+                System.out.println("Move disc " + discs + " from " + from + " to " + to + ".\n");
+                towerOfHanoi(discs - 1, aux, from, to);
             }
-
         }
-        return 1;
     }
 
-    public static void towerPrint(ArrayList<Integer> a, ArrayList<Integer> b, ArrayList<Integer> c) {
 
-
-    }
-}
         /*
         Find a pattern that can be repeated (Smaller sub-problems)
 
