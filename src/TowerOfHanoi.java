@@ -34,19 +34,20 @@ public class TowerOfHanoi {
         char aux = 'B';
         char to = 'C';
         int moves = 0;
-        towerOfHanoi(discs, from, aux, to);
+        towerOfHanoi(discs, from, aux, to, moves);
     }
 
-    public static void towerOfHanoi(int discs,char from,char aux,char to) {
+    public static void towerOfHanoi(int discs,char from,char aux,char to,int moves) {
+            System.out.println("Moves = " + moves);
             if (discs == 1) {
-                //moves += 1;
                 System.out.println("Move disc 1 from " + from + " to " + to + ".\n");
-                //System.out.println("Hanoi Complete in " + moves + " moves!");
+
             } else {
-                //moves += 1;
-                towerOfHanoi(discs - 1, from, to, aux);
+                moves += 1;
+                towerOfHanoi(discs - 1, from, to, aux, moves);
                 System.out.println("Move disc " + discs + " from " + from + " to " + to + ".\n");
-                towerOfHanoi(discs - 1, aux, from, to);
+                towerOfHanoi(discs - 1, aux, from, to, moves);
+
             }
         }
     }
