@@ -1,8 +1,7 @@
 public class printPermutn {
 
     public static void main(String[] args) {
-        int k = 3;
-        String letters = "abc";
+        String letters = "geek";
         printPermutn(letters, "");
 
     }
@@ -10,6 +9,7 @@ public class printPermutn {
         // if string is empty
         if (str.length() == 0) {
             System.out.print(ans + " ");
+            System.out.println("");
             return;
         }
 
@@ -25,6 +25,7 @@ public class printPermutn {
 
             // Recursive call
             printPermutn(ros, ans + ch);
+
         }
     }
 }
