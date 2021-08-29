@@ -3,8 +3,8 @@ public class printPermutn {
     public static void main(String[] args) {
         String letters = "geek";
         printPermutn(letters, "");
-
     }
+
     public static void printPermutn(String str, String ans){
         // if string is empty
         if (str.length() == 0) {
@@ -25,7 +25,6 @@ public class printPermutn {
 
             // Recursive call
             printPermutn(ros, ans + ch);
-
         }
     }
 }

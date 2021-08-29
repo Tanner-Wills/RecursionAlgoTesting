@@ -10,7 +10,7 @@ public class IncreasingSubsequence {
           Index through the list
           At each index, count the number of ints that are of lesser index and lesser value. *subCount*
           Then subCount(i) += subCount at each index of lesser index and value
-          Add this count to the ArrayList
+          Add this count to the ArrayList *subArray*
 
         */
         //int[] myList = {1, 7, 3, 5, 2, 8, 10, 24, -1, -5, 4};
