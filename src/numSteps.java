@@ -15,17 +15,21 @@ public class numSteps {
 
     // Wrapper Method
     public static void num_ways(int stairs) {
-        int[] steps = {1, 3, 5};
+        int[] steps = {1, 2};
         stairs_climbed(stairs, steps, "");
     }
 
     // Recursive Method
     public static void stairs_climbed(int stairs, int[] steps, String ans) {
-        if (stairs == 0) {
+        // Base case #1
+        if (stairs == 0){
             System.out.println(ans);
             return;
+
+        // Base case #2
         } else if(stairs < 0){
             return;
+
         } else {
             for (int step : steps) {
                 String climbed = (String.valueOf(step) + " ");
