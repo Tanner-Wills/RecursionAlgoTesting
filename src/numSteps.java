@@ -7,16 +7,19 @@ public class numSteps {
      * Output: 2 ways (1+1, 2)
      */
 
+    // Driver Code
     public static void main(String[] args) {
         int N = 4;
         num_ways(N);
     }
 
+    // Wrapper Method
     public static void num_ways(int stairs) {
-        int[] steps = {1, 2};
+        int[] steps = {1, 3, 5};
         stairs_climbed(stairs, steps, "");
     }
 
+    // Recursive Method
     public static void stairs_climbed(int stairs, int[] steps, String ans) {
         if (stairs == 0) {
             System.out.println(ans);
