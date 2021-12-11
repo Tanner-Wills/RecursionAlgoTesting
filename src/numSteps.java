@@ -16,25 +16,24 @@ public class numSteps {
     // Wrapper Method
     public static void num_ways(int stairs) {
         int[] steps = {1, 2};
-        stairs_climbed(stairs, steps, "");
+        System.out.println("Number of ways = " + stairs_climbed(stairs, steps));
     }
 
     // Recursive Method
-    public static void stairs_climbed(int stairs, int[] steps, String ans) {
+    public static int stairs_climbed(int stairs, int[] steps) {
         // Base case #1
         if (stairs == 0){
-            System.out.println(ans);
-            return;
+            return 1;
 
         // Base case #2
         } else if(stairs < 0){
-            return;
+            return 0;
 
-        } else {
-            for (int step : steps) {
-                String climbed = (String.valueOf(step) + " ");
-                stairs_climbed(stairs - step, steps, ans + climbed);
-            }
         }
+        int total = 0;
+        for (int step : steps) {
+            total += stairs_climbed(stairs - step, steps);
+            }
+        return total;
     }
 }
